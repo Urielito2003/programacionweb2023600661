@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Murciélago</title>
+</head>
+<body>
+    <h1>Cadena "murciélago"</h1>
+
+    <script>
+        let cadenaOriginal = "murcielago";
+        let listaVocales = "aeiou";
+        let contadorVocales = 0;
+        let cadenaEFE = "";
+
+        let indiceCadena = 0;
+        while (indiceCadena < cadenaOriginal.length) {
+            let caracterActual = cadenaOriginal[indiceCadena];
+
+            let indiceVocales = 0;
+            let esVocal = 0;
+            while (indiceVocales < listaVocales.length) {
+                esVocal += (caracterActual === listaVocales[indiceVocales]) * 1;
+                indiceVocales++;
+            }
+
+            contadorVocales += esVocal;
+
+            let caracterTransformado = caracterActual.repeat(1 - esVocal) + 
+                                       (caracterActual + "f" + caracterActual).repeat(esVocal);
+            cadenaEFE += caracterTransformado;
+            indiceCadena++;
+        }
+
+        let contadorConsonantes = cadenaOriginal.length - contadorVocales;
+
+        document.write("<p>Número de vocales: " + contadorVocales + "</p>");
+        document.write("<p>Número de consonantes: " + contadorConsonantes + "</p>");
+        document.write("<p>Idioma EFE: " + cadenaEFE + "</p>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Serie Numérica</title>
+</head>
+<body>
+    <h1>Serie del 2 al 400</h1>
+
+    <script>
+        let serieNumerica = [];
+        let numeroActual = 2;
+
+        while (numeroActual <= 400) {
+            serieNumerica.push(numeroActual);
+            numeroActual += 2;
+        }
+
+        let textoSerie = "Serie: ";
+        let indiceSerie = 0;
+        while (indiceSerie < serieNumerica.length) {
+            textoSerie += serieNumerica[indiceSerie] + ", ";
+            indiceSerie++;
+        }
+
+        let sumaTotal = 0;
+        let indiceSuma = 0;
+        while (indiceSuma < serieNumerica.length) {
+            sumaTotal += serieNumerica[indiceSuma];
+            indiceSuma++;
+        }
+        let promedio = sumaTotal / serieNumerica.length;
+
+        let posicionCentral = Math.floor(serieNumerica.length / 2);
+        let mediana = (serieNumerica[posicionCentral - 1] + serieNumerica[posicionCentral]) / 2;
+
+        let modaTexto = "Todos los números aparecen una sola vez, no hat moda en la serie :(";
+
+       
+        document.write("<p>" + textoSerie + "</p>");
+        document.write("<p>Promedio: " + promedio + "</p>");
+        document.write("<p>Mediana: " + mediana + "</p>");
+        document.write("<p>Moda: " + modaTexto + "</p>");
+    </script>
+</body>
+</html>
