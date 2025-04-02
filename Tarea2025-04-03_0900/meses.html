@@ -1,0 +1,28 @@
+<html>
+<head>
+    <script>
+        function meses(){
+            let meses = [
+                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            ];
+             
+            let listaMeses = '';
+            for (let i = 0; i < meses.length; i++) {
+                listaMeses += `<li>${meses[i]} - ${i + 1}º</li>`;
+            }
+                document.getElementById('meses-lista').innerHTML = listaMeses;
+            }
+    </script>
+</head>
+<body onload="meses()">
+
+    <h1>Los 12 meses del año con su ordinal</h1>
+    <ul id="meses-lista">
+    </ul>
+
+</body>
+
+
+
+</html>

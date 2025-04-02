@@ -1,0 +1,68 @@
+<html>
+
+<head>
+ 
+    <title>Operaciones con Arreglos </title>
+    <script>
+     
+        function definirArreglos() {
+            let números = [30, 10, 20, 9]; 
+            let cadenas = ["Esto", " ", "Es", " Brazil!!"]; 
+            let booleanos = [true, false, true, true]; 
+
+            return { números, cadenas, booleanos }; 
+        }
+
+        
+        function sumarNumeros(arreglo) {
+            let suma = 0;
+            for (let i = 0; i < arreglo.length; i++) {
+                suma += arreglo[i];
+            }
+            return suma;
+        }
+
+       
+        function concatenarCadenas(arreglo) {
+            let concatenación = "";
+            for (let i = 0; i < arreglo.length; i++) {
+                concatenación += arreglo[i];
+            }
+            return concatenación;
+        }
+
+        function operarAND(arreglo) {
+            let resultadoBooleano = arreglo[0]; // Inicializamos con el primer valor
+            for (let i = 1; i < arreglo.length; i++) {
+                resultadoBooleano = resultadoBooleano && arreglo[i]; // Operación AND
+            }
+            return resultadoBooleano;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Operaciones con Arreglos </h1>
+
+ 
+    <p id="suma"></p>
+    <p id="concatenación"></p>
+    <p id="booleano"></p>
+
+    <script>
+       
+        let { números, cadenas, booleanos } = definirArreglos(); 
+
+     
+        let suma = sumarNumeros(números);
+        let concatenación = concatenarCadenas(cadenas);
+        let resultadoBooleano = operarAND(booleanos);
+
+      
+        document.getElementById("suma").innerText = "La suma de los números es: " + suma;
+        document.getElementById("concatenación").innerText = "La concatenación de las cadenas es: " + concatenación;
+        document.getElementById("booleano").innerText = "El resultado de la operación AND entre los booleanos es: " + resultadoBooleano;
+    </script>
+</body>
+
+</html>
